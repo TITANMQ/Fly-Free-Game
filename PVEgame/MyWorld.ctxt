@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.target=MyWorld
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ MyWorld\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=MyWorld()
+comment10.params=
+comment10.target=int\ getFrogPop()
+comment2.params=
+comment2.target=void\ prepare()
+comment3.params=score
+comment3.target=void\ setScore(int)
+comment4.params=value
+comment4.target=void\ setFliesDeaths(int)
+comment5.params=n
+comment5.target=void\ addFrogs(int)
+comment6.params=
+comment6.target=int\ getFliesPop()
+comment7.params=i
+comment7.target=void\ addFliesToPopulation(int)
+comment8.params=i
+comment8.target=void\ removeFliesFromPopulation(int)
+comment9.params=i
+comment9.target=void\ setFrogPop(int)
+numComments=11

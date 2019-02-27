@@ -1,0 +1,38 @@
+Class documentation
+<---- javadoc command: ---->
+C:\Program Files (x86)\Greenfoot\jdk\bin\javadoc.exe
+-author
+-version
+-nodeprecated
+-protected
+-noindex
+-notree
+-nohelp
+-nonavbar
+-source
+1.8
+-classpath
+C:\Program Files (x86)\Greenfoot\lib\extensions\greenfoot.jar;C:\Program Files (x86)\Greenfoot\lib\bluejcore.jar;C:\Program Files (x86)\Greenfoot\lib\bluejeditor.jar;C:\Program Files (x86)\Greenfoot\lib\bluejext.jar;C:\Program Files (x86)\Greenfoot\lib\AppleJavaExtensions.jar;C:\Program Files (x86)\Greenfoot\lib\junit-4.11.jar;C:\Program Files (x86)\Greenfoot\lib\hamcrest-core-1.3.jar;C:\Program Files (x86)\Greenfoot\lib\bluej.jar;C:\Program Files (x86)\Greenfoot\lib\diffutils-1.2.1.jar;C:\Program Files (x86)\Greenfoot\lib\commons-httpclient-3.1.jar;C:\Program Files (x86)\Greenfoot\lib\commons-logging-api-1.1.2.jar;C:\Program Files (x86)\Greenfoot\lib\commons-codec-1.3.jar;C:\Program Files (x86)\Greenfoot\lib\jl1.0.1.jar;C:\Program Files (x86)\Greenfoot\lib\opencsv-2.3.jar;C:\Program Files (x86)\Greenfoot\lib\xom-1.2.9.jar;C:\Program Files (x86)\Greenfoot\lib\lang-stride.jar;C:\Program Files (x86)\Greenfoot\lib\guava-17.0.jar;C:\Program Files (x86)\Greenfoot\lib\javassist-3.18.0.jar;C:\Program Files (x86)\Greenfoot\lib\commons-vfs2-2.0.jar;C:\Program Files (x86)\Greenfoot\lib\httpclient-4.1.1.jar;C:\Program Files (x86)\Greenfoot\lib\httpcore-4.1.jar;C:\Program Files (x86)\Greenfoot\lib\httpmime-4.1.1.jar;D:\Work\Unsorted work backups 2017-18\Units\Projects\Greenfoot\PVEgame
+-d
+D:\Work\Unsorted work backups 2017-18\Units\Projects\Greenfoot\PVEgame\doc
+-encoding
+UTF-8
+-charset
+UTF-8
+-docletpath
+C:\Program Files (x86)\Greenfoot\lib\bjdoclet.jar
+-doclet
+bluej.doclet.doclets.formats.html.HtmlDoclet
+D:\Work\Unsorted work backups 2017-18\Units\Projects\Greenfoot\PVEgame\Fly_bot.java
+<---- end of javadoc command ---->
+Loading source file D:\Work\Unsorted work backups 2017-18\Units\Projects\Greenfoot\PVEgame\Fly_bot.java...
+D:\Work\Unsorted work backups 2017-18\Units\Projects\Greenfoot\PVEgame\Fly_bot.java:35: error: : expected
+            default Egg.PLAYER1_CLASS:
+                   ^
+D:\Work\Unsorted work backups 2017-18\Units\Projects\Greenfoot\PVEgame\Fly_bot.java:35: error: not a statement
+            default Egg.PLAYER1_CLASS:
+                       ^
+D:\Work\Unsorted work backups 2017-18\Units\Projects\Greenfoot\PVEgame\Fly_bot.java:35: error: ';' expected
+            default Egg.PLAYER1_CLASS:
+                                     ^
+3 errors

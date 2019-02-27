@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.target=Enemy
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Enemy\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=safeBounds
+comment1.target=Enemy(SafeHouseBounds)
+comment10.params=counter
+comment10.target=int\ counterCheck(int)
+comment11.params=
+comment11.target=void\ waitNow()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=boolean\ atWorldEdge()
+comment4.params=
+comment4.target=void\ nextTurn()
+comment5.params=
+comment5.target=void\ moveForward()
+comment6.params=
+comment6.target=void\ turnAround()
+comment7.params=
+comment7.target=void\ eats()
+comment8.params=
+comment8.target=void\ spawnTadpoles()
+comment9.params=
+comment9.target=void\ die()
+numComments=12
