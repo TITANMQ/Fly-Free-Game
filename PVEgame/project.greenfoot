@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Wed Feb 27 09:17:23 GMT 2019
+#Wed Feb 27 11:20:20 GMT 2019
 target16.name=Enemy
 class.MyWorld.image=Back draft 2.png
 dependency35.to=Fly_bot
@@ -98,14 +98,14 @@ dependency23.type=UsesDependency
 dependency20.from=Fly_bot
 class.Enemy.superclass=greenfoot.Actor
 target4.width=130
-target9.showInterface=false
 dependency27.from=Enemy
+target9.showInterface=false
 target10.showInterface=false
 target1.showInterface=false
 target5.type=ClassTarget
 dependency10.to=Stopwatch
 publish.url=
-class.Tadpole.image=evenious morious teenious tinious tadious polious microscopicous.png
+class.Tadpole.image=tinytadpole.png
 dependency30.type=UsesDependency
 target2.height=50
 width=1533
@@ -192,7 +192,7 @@ dependency25.from=Enemy
 target10.y=0
 target3.type=ClassTarget
 target10.x=0
-class.Fly_bot.image=smol fly.png
+class.Fly_bot.image=flysmall.png
 readme.name=@README
 class.Enemy.image=frog.png
 dependency35.type=UsesDependency
