@@ -58,7 +58,9 @@ public class Tadpole extends Actor
     {
 
         world = getWorld(); 
+        MyWorld myWorld =(MyWorld) world;
         world.addObject(new Enemy(safeBounds), getX(), getY());
+        
         world.removeObject(this);
     }
     /**

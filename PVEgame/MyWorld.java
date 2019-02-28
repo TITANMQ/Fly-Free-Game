@@ -15,6 +15,7 @@ public class MyWorld extends World
     
     final static int WIDTH = 1200;
     final static int HEIGHT = 800;
+    final static int OBJECT_LIMIT = 4; //Object limit value
     /**
      * Constructor for objects of class MyWorld.
      * 

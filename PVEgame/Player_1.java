@@ -103,58 +103,60 @@ public class Player_1 extends Player implements Iplayer
 
     private void layEgg()
     {   
-        if(layedEgg == false){
-            if(Greenfoot.isKeyDown("space") && !fromEgg )
-            {
-                World world; 
-                world = getWorld(); 
-                world.addObject( new Egg(getX(), getY()), getX(), getY()); 
-                //System.out.println("spawned"); 
-                // layedEgg = true;
-                //stopwatch.resetClock();
-                stopwatch.startClock();
-                MyWorld myWorld = (MyWorld) world;
 
-                myWorld.addFliesToPopulation(1);
+        World world = getWorld();
+        MyWorld myWorld = (MyWorld) world;
+        if(!(myWorld.getFliesPop() >= MyWorld.OBJECT_LIMIT)){
+            if(layedEgg == false){
+                if(Greenfoot.isKeyDown("space") && !fromEgg )
+                {
 
-            }
-        }else
-        {  
+                    world.addObject( new Egg(getX(), getY()), getX(), getY()); 
+                    //System.out.println("spawned"); 
+                    // layedEgg = true;
+                    //stopwatch.resetClock();
+                    stopwatch.startClock();
 
-            if(stopwatch.getSeconds() == 0)
-            {
-                //layedEgg = false;
-                stopwatch.stopClock();
-                stopwatch.resetClock();
+                    myWorld.addFliesToPopulation(1);
+                }
+            }else
+            {  
 
-            }
+                if(stopwatch.getSeconds() == 0)
+                {
+                    //layedEgg = false;
+                    stopwatch.stopClock();
+                    stopwatch.resetClock();
 
-        }
-        if(autoLay)
-        {    
-            MyWorld world = (MyWorld) getWorld();
-            if(world.getFliesPop()< 50)
-            {
-                World world1; 
-                world1 = getWorld(); 
-                world1.addObject( new Egg(getX(), getY()), getX(), getY());
-                stopwatch.startClock();
-                world.addFliesToPopulation(1);
-            }
-        }
-        else
-        {  
-
-            if(stopwatch.getSeconds() == 0)
-            {
-                //layedEgg = false;
-                stopwatch.stopClock();
-                stopwatch.resetClock();
+                }
 
             }
+            if(autoLay)
+            {    
 
+                if(myWorld.getFliesPop()< 50)
+                {
+
+                    world.addObject( new Egg(getX(), getY()), getX(), getY());
+                    stopwatch.startClock();
+                    myWorld.addFliesToPopulation(1);
+                }
+            }
+            else
+            {  
+
+                if(stopwatch.getSeconds() == 0)
+                {
+                    //layedEgg = false;
+                    stopwatch.stopClock();
+                    stopwatch.resetClock();
+
+                }
+
+            }
         }
     }
+
     private void buzz()
     {   
         int songLength = 100000;

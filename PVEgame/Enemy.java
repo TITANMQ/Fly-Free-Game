@@ -12,7 +12,7 @@ public class Enemy extends Actor
      * Act - do whatever the Enemy wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */ 
-    
+
     private World world;
     private MyWorld myWorld;
     int x;
@@ -23,14 +23,15 @@ public class Enemy extends Actor
     boolean firstTurn = false; 
     private int deathCounter = 0;
     private int lifeLimit = 260; //250
-    
+
     public Enemy(SafeHouseBounds safeBounds)
     {
-        
+
         this.safeBounds = safeBounds;
         myWorld = (MyWorld) getWorld(); 
-        
+
     }
+
     public void act() 
     {   
         if(firstTurn == false)
@@ -39,42 +40,40 @@ public class Enemy extends Actor
             // myWorld.setFrogPop(myWorld.getFrogPop()+1);
         }
         eats();
-         if(newPoint != null )
+        if(newPoint != null )
         {
             if(safeBounds.isInBounds(newPoint, false))
             {
                 world = getWorld();
                 world.removeObject(newPoint);
                 newPoint = null;
-               
+
             }
         }
         x = getX(); 
         y = getY();
         spawnTadpoles();
-        
-      
+
         waitCounter = counterCheck(waitCounter);
-     
         if(waitCounter <= 10)// && newPoint != null)
         {
             moveForward(); 
             safeBounds.inBounds(this); 
             nextTurn();
-            if(deathCounter++ == lifeLimit )
+            if(deathCounter++ >= lifeLimit )
             {   
-                  world = getWorld();
-                  world.addObject(new Collectable(), x, y);
-                  //myWorld.setFrogPop(myWorld.getFrogPop()-1);
-                  die();
-                
+                world = getWorld();
+                MyWorld myWorld = (MyWorld) world;
+                myWorld.setFrogPop(myWorld.getFrogPop()-1);
+                world.addObject(new Collectable(), x, y);
+                die();
+
             }
-          
-           
+
         }
-        
        
     }  
+
     public boolean atWorldEdge()
     {
         if(getX() < 20 || getX() > getWorld().getWidth() - 20)
@@ -85,73 +84,74 @@ public class Enemy extends Actor
             return false;
     }
 
-    
     private void nextTurn()
     {   
-      
-       int randomNumber= Greenfoot.getRandomNumber(2);
-       if( randomNumber % 2 == 0 && randomNumber < 2  && waitCounter < 10)
-       {   
-           turnAround();
-           newPoint =new EnemyJumpPoint(getRotation(), getX(), getY());
-           World world; 
-           world = getWorld();
-           if(newPoint != null){
-           world.addObject(newPoint, getX(), getY());
-           newPoint.setPoint(200);
-        }
-           waitNow();
-           
+
+        int randomNumber= Greenfoot.getRandomNumber(2);
+        if( randomNumber % 2 == 0 && randomNumber < 2  && waitCounter < 10)
+        {   
+            turnAround();
+            newPoint =new EnemyJumpPoint(getRotation(), getX(), getY());
+            World world; 
+            world = getWorld();
+            if(newPoint != null){
+                world.addObject(newPoint, getX(), getY());
+                newPoint.setPoint(200);
+            }
+            waitNow();
+
         }
     }
+
     private void moveForward() 
     {  
-           
-           if(atWorldEdge())
-           {
-               turn(180);
-           }
-          
-           move(100);
-         EnemyJumpPoint point = (EnemyJumpPoint)getOneIntersectingObject(EnemyJumpPoint.class);
-         if(point != null)
-         {  
-  
-             world = getWorld();
-             world.removeObject(point);
-             newPoint = null;
-             
+
+        if(atWorldEdge())
+        {
+            turn(180);
         }
-         world = getWorld();
-         world.removeObject(newPoint);
-           
+
+        move(100);
+        EnemyJumpPoint point = (EnemyJumpPoint)getOneIntersectingObject(EnemyJumpPoint.class);
+        if(point != null)
+        {  
+
+            world = getWorld();
+            world.removeObject(point);
+            newPoint = null;
+
+        }
+        world = getWorld();
+        world.removeObject(newPoint);
+
     } 
-    
+
     private void turnAround()
     {   
-       // int randomNumber= Greenfoot.getRandomNumber(5000);
-        
-           int randomTurn =  Greenfoot.getRandomNumber(100);
-           if(randomTurn > 50)
-           {    
-               turn(70);
-            }else
-            {
-                turn(-70);
-            }
-       
+        // int randomNumber= Greenfoot.getRandomNumber(5000);
+
+        int randomTurn =  Greenfoot.getRandomNumber(100);
+        if(randomTurn > 50)
+        {    
+            turn(70);
+        }else
+        {
+            turn(-70);
+        }
+
         turn(5);
     }
+
     private void eats()
     {
-          Player player = (Player)getOneIntersectingObject(Player.class);
+        Player player = (Player)getOneIntersectingObject(Player.class);
         if(player != null)
         {  
             player.setHealth(player.getHealth()-25);
-            
+
             if(player.getHealth()<= 0)
             {   
-                
+
                 if(player.getClass() == Fly_bot.class)
                 {
                     Fly_bot fly_bot = (Fly_bot) player;
@@ -160,54 +160,59 @@ public class Enemy extends Actor
                 MyWorld world; 
                 world = (MyWorld)getWorld();
                 world.removeObject(player);
-                
+
                 world.setFliesDeaths(1);
                 world.removeFliesFromPopulation(1);
             }
-            
-            
+
             
         }
-        
+
     }
+
     private void spawnTadpoles()
     {   
         int randomChance = Greenfoot.getRandomNumber(5000);  
         if( randomChance % 2 == 0 && randomChance < 25){
-         world = getWorld(); 
-         //int spawnAmount =  Greenfoot.getRandomNumber(1);  
-         
-          world.addObject(new Tadpole(safeBounds), x, y);
-        
-       }
-   }
-   
-   private void die()
-   {
-       World world =(MyWorld) getWorld();
-       world.removeObject(this);
-    
-   }
-   private int counterCheck(int counter)
-   {
-       // if(counter <= 0)
-       // {
-           // return counter;
+            world = getWorld(); 
+            MyWorld myWorld = (MyWorld) world;
+            //int spawnAmount =  Greenfoot.getRandomNumber(1);  
+            if(!(myWorld.getFrogPop()> MyWorld.OBJECT_LIMIT)){
+                world.addObject(new Tadpole(safeBounds), x, y);
+                myWorld.setFrogPop(myWorld.getFrogPop()+1);
+
+            }
+        }
+    }
+
+    private void die()
+    {
+        World world = getWorld();
+        world.removeObject(this);
+
+    }
+
+    private int counterCheck(int counter)
+    {
+        // if(counter <= 0)
+        // {
+        // return counter;
         // }else
         // {
-            // counter--;
+        // counter--;
         // }
         if(counter > 0 && counter <= 30)
         {
-          counter--;  
+            counter--;  
         }
         return counter;
     }
-   public void waitNow()
-   {
-       if(waitCounter != 30)
-       {
-           waitCounter = 30;
-       }
-   }
+
+    public void waitNow()
+    {
+        if(waitCounter != 30)
+        {
+            waitCounter = 30;
+        }
+    }
 }
