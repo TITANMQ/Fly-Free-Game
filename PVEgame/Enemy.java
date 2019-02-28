@@ -65,7 +65,7 @@ public class Enemy extends Actor
             {   
                   world = getWorld();
                   world.addObject(new Collectable(), x, y);
-                  myWorld.setFrogPop(myWorld.getFrogPop()-1);
+                  //myWorld.setFrogPop(myWorld.getFrogPop()-1);
                   die();
                 
             }
